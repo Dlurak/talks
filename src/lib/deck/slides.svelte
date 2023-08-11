@@ -8,6 +8,8 @@
 	import 'reveal.js/dist/reveal.css';
 	import 'reveal.js/dist/theme/black.css';
 
+	import Presentation from './presentation.svelte';
+
 	onMount(() => {
 		const deck = new Reveal({
 			autoAnimateEasing: 'ease',
@@ -25,7 +27,6 @@
 
 <div class="reveal">
 	<div class="slides">
-		<section>1</section>
-		<section>2</section>
+		<Presentation />
 	</div>
 </div>
