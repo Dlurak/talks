@@ -20,7 +20,11 @@
 		});
 
 		deck.initialize({
-			plugins: [Markdown, Highlight, Notes]
+			plugins: [Markdown, Highlight, Notes],
+
+			height: 700,
+			// 16/9
+			width: 1244
 		});
 	});
 </script>
