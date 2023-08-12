@@ -355,3 +355,157 @@
 		</ul>
 	</Notes>
 </Slide>
+
+<Slide>
+	<Slide animate>
+		<h4>Sets und Unions</h4>
+	</Slide>
+	<Slide animate>
+		<h4>Sets und Unions</h4>
+
+		<Code lines id="code">
+			{`
+                node[shop=books];
+                way[shop=books];
+                relation[shop=books];
+            `}
+		</Code>
+
+		<Notes>
+			hier würde erst nach nodes gesucht werden das ergebniss davon wird mit ways überschrieben und
+			das mit relations man hat also nur das ergebniss von relations <br />
+
+			In Overpass gibt es das konzept von sets, das sind quasi variabelen, sie starten immer mit
+			einem . und standard wird in ._ geschrieben. <br />
+			Hier wird dann jedesmal ._ überschrieben. <br />
+
+			Um das zu lösen muss man die Union syntax nutzen
+		</Notes>
+	</Slide>
+
+	<Slide animate>
+		<h4>Sets und Unions</h4>
+
+		<Code lines id="code">
+			{`
+                (
+                    node[shop=books];
+                    way[shop=books];
+                    relation[shop=books];
+                );
+            `}
+		</Code>
+
+		<Notes>
+			Hier gibt es jetzt durch die klammern eine union, jetzt wird das ergebnis der union in ._
+			geschrieben
+		</Notes>
+	</Slide>
+
+	<Slide animate>
+		<h4>Sets und Unions</h4>
+
+		<Code lines id="code">
+			{`
+                node[shop=books]->.bookStores;
+
+                .bookStores;
+
+                out center;
+            `}
+		</Code>
+
+		<Notes>
+			Hier wird nun in das set .bookStores geschrieben. Das kann in größeren queries sehr sehr
+			hilfreich sein. <br />
+			Dadurch das man nochmals .bookStores direkt vor dem out schreibt wird dieses set ausgegeben
+		</Notes>
+	</Slide>
+</Slide>
+
+<Slide>
+	<Slide animate>
+		<h2>Beispiele</h2>
+	</Slide>
+
+	<Slide animate>
+		<h2>Beispiele</h2>
+
+		<Code lines>
+			{`
+                [out:csv(::id,::lat,::lon;true;";")];
+                
+                // Das Camp Gelände mit der ID
+                area(442428017)->.searchArea;
+
+                // Bäume in der searchArea
+                node["natural"="tree"](area.searchArea);
+                out;
+            `}
+		</Code>
+	</Slide>
+
+	<Slide>
+		<h2>Beispiele</h2>
+
+		<Code lines>
+			{`
+                [out:json][timeout:25];
+                {{geocodeArea:Hamburg}}->.searchArea;
+                nwr["amenity"="restaurant"][cuisine~"korean"](area.searchArea);
+            
+                out center;
+            `}
+		</Code>
+	</Slide>
+
+	<Slide animate>
+		<h2>Beispiele</h2>
+
+		<Code lines="1-11|1|2|4-8|10|11|1,11" id="code">
+			{`
+                [out:csv(ref, colour; false; ';')];
+                node(205364328)->.center;
+
+                (
+                    node(around.center:150)["public_transport"="stop_position"];
+                    nw(around.center:150)["highway"="bus_stop"];
+                    nwr(around.center:150)["amenity"="ferry_terminal"];
+                ) -> .stops;
+
+                rel(bn.stops)["route"~"bus|train|tram|subway|light_rail|ferry|monorail"];
+                out;
+            `}
+		</Code>
+
+		<Notes>
+			<ul>
+				<li>
+					Diese query habe ich/dimi letztens in einem pull request for die osm website osmapp
+					genutzt. Sie findet alle bus/s-bahn/bahn... linien rund um einen bahnhof und gibt die
+					offiziele farbe der linie und die referenz aus.
+				</li>
+				<li>
+					Zuerst out csv, damit bekommt man die daten im csv format, in dem fall erst mit dem tag
+					ref dann einem selikonom und dann colour ohne eine erste zeile die definiert was was ist
+				</li>
+				<li>
+					Dann wird der node mit der osm id gesucht und in .center geschrieben, das ist der
+					frankfurter hauptbahnhof
+				</li>
+				<li>
+					Dann wird eine union gemacht mit allen haltepunkten die es so geben kann im ukreis von 150
+					metern und in stops geschrieben
+				</li>
+				<li>
+					dann wird nach allen relationens gesucht die einen der stops beinhalten und einen der tags
+					haben
+				</li>
+				<li>
+					Weil out:csv benutzt wird wird das ergebniss als csv ausgegeben und man kann nur out
+					nutzen
+				</li>
+			</ul>
+		</Notes>
+	</Slide>
+</Slide>
