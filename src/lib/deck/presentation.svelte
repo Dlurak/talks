@@ -322,3 +322,36 @@
 		<Notes>Das ist jetzt eine sehr schöne query</Notes>
 	</Slide>
 </Slide>
+
+<Slide>
+	<h3>Query Language</h3>
+
+	<ul>
+		<li>Semikolon: <b>notwendig</b>.</li>
+		<li>
+			<i>Abkürzungen</i>: <i>node</i>, <i>way</i>, <i>rel</i> oder <i>relation</i>.
+		</li>
+		<li>Kombinationen: <i>nw</i>, <i>nwr</i>, <i>nr</i>, <i>wr</i>.</li>
+		<li>Tagsuche: <i>[shop=books][opening_hours]</i> für Buchhandlungen mit Öffnungszeiten.</li>
+	</ul>
+
+	<Notes>
+		<ul>
+			<li>Semikolons sind notwendig sonst gibt es einen Fehler</li>
+			<li>
+				Es gibt auch noch area doch das ist bischen spezieller zumal auf osm flächen wege sind
+			</li>
+			<li>
+				eckige klammern für tags <ul>
+					<li>nur ein wort ist dann nur der key der wert ist egal</li>
+					<li>es gibt den operator = != ~ und !~ das sind so die wichtigsten</li>
+					<li>
+						{`Es gibt auch kein < > >= <= das kann man aber auch machen mit regex oder der if syntax`}
+					</li>
+					<li>Nur wenn es zeitlich passt hier ein beispiel von der if syntax:</li>
+					<li><code>(if: (is_number(t["maxspeed"]) && t["maxspeed"] > 30))</code></li>
+				</ul>
+			</li>
+		</ul>
+	</Notes>
+</Slide>
