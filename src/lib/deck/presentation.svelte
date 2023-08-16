@@ -7,19 +7,31 @@
 
 <Slide>
 	<h1>Openstreetmap und Overpass</h1>
+
+	<Notes>
+		<h3>Dimi</h3>
+	</Notes>
 </Slide>
 
 <Slide animate>
 	<h2>Openstreetmap</h2>
+
+	<Notes>
+		<h3>Dimi</h3>
+	</Notes>
 </Slide>
 
 <Slide animate>
 	<h2>Openstreetmap</h2>
 	<ul>
-		<li>Openstreetmap ist eine freie Karte</li>
+		<li>Openstreetmap ist eine freie Karte, von daher <i>Open data</i></li>
 		<li>Jeder kann sie bearbeiten</li>
-		<li>Die vollständigkeit der Daten kann sehr unterschiedlich sein</li>
+		<li>Die Karte lebt von Bearbeitungen</li>
 	</ul>
+
+	<Notes>
+		<h3>David</h3>
+	</Notes>
 </Slide>
 
 <Slide>
@@ -29,7 +41,9 @@
 	</div>
 
 	<Notes>
+		<h3>David</h3>
 		<ul>
+			<li>Die Qualität der Kartenkann extrem hoch werden, kann jedoch auchh sehr shlecht sein</li>
 			<li>Beide Bilder sind aus Chicago und nur wenige Kilometer voneinander entfernt</li>
 			<li>
 				In (Zentral) Europa ist die Qualität in der Regel recht hoch, vereinzelt auch so hoch wie
@@ -47,22 +61,37 @@
 	</div>
 
 	<Notes>
-		<li>OSMApp ist Open Source und eigentlich keine app sondern eine pwa</li>
-		<li>Komoot ist nicht open source</li>
-		<li>Organic Maps ist recht simpel hat aber auch nicht so viele funktionen</li>
+		<h3>David</h3>
+
+		<li>
+			OSMApp ist Open Source und eigentlich keine app sondern eine pwa (Progressive Web Application)
+		</li>
+		<li><i>(Maps.me)</i> Organic Maps ist recht simpel hat aber auch nicht so viele funktionen</li>
 		<li>
 			OSMAnd ist sehr komplex doch hat auch sehr viele funktionen, es ist open source doch nur
 			eingeschränkt kostenlos außer im F-Droid store
 		</li>
+		<li>Komoot ist nicht open source</li>
 	</Notes>
 </Slide>
 
 <Slide>
 	<h3>Datenstruktur</h3>
+
+	<Notes>
+		<h3>Dimi</h3>
+	</Notes>
 </Slide>
+
 <Slide>
 	<Slide>
 		<h4>Verschiedene Arten von Objekten</h4>
+
+		<Notes>
+			<h3>Dimi</h3>
+			<hr />
+			<i>Nodes, ways, relations</i>
+		</Notes>
 	</Slide>
 	<Slide>
 		<h5>Node</h5>
@@ -115,13 +144,13 @@
 	</Code>
 
 	<Notes>
-		Nur weil man weiß das etwas eine Linie ist weiß man noch lange nicht was genau es ist
-		<hr />
+		<h3>David</h3>
 
+		Tags spezifizieren was genau ein Objekt ist
 		<ul>
 			<li>Eine Bundesstraße</li>
 			<li>Durch die kombi mehr daten</li>
-			<li>Ein <code>:</code> detailiert den key noch genauer</li>
+			<li>Ein <code>:</code> detailiert den key noch mehr</li>
 			<li>:forward ist in die richtung in die der osm way verläuft und backward die andere</li>
 			<li>Mit einem <code>;</code> kombiniert man werte</li>
 		</ul>
@@ -131,11 +160,15 @@
 <Slide>
 	<h2>Overpass</h2>
 
-	<h3>Hier füge ich noch den qr code ein</h3>
+	<div class="flex items-center justify-center h-96">
+		<img src="/overpassQR.gif" alt="QR-Code zu overpass" class="h-full aspect-square" />
+	</div>
 
 	<Notes>
+		<h3>David</h3>
+
 		<ul>
-			<li>Man kann OSM als DB ansehen, wie jede db gibt es eine query sprache</li>
+			<li>Man kann OSM als Datenbank ansehen, wie jede Datenbank gibt es eine query sprache</li>
 			<li>Dafür nutzt man die Overpass API und die Overpass Query Language</li>
 		</ul>
 	</Notes>
@@ -151,11 +184,29 @@
 		/>
 
 		<Notes>
-			Man kann zwar selber die query schreiben aber für simple ist das aufwendiger als nötig Indem
-			man auf den wizard button drückt kommt ein popup wo man die query simpeler zusammenstellen
+			<h3>David</h3>
+
+			<ul>
+				<li>FÜr simple Queries kann man den Wizard nutzen</li>
+				<li>Wenn man den Wizard button drückt kommt ein popup</li>
+				<li>dort kann man simple Queries erstellen, aber</li>
+			</ul>
+			Man kann zwar selber die query schreiben aber für simple Queries ist das aufwendiger als nötig
+			Indem man auf den Wizard button drückt kommt ein popup wo man die query simpeler zusammenstellen
 			kann
 		</Notes>
 	</Slide>
+
+	<Slide>
+		<h3>Live Demo</h3>
+
+		<Notes>
+			<h3>Dimi</h3>
+
+			<a href="https://www.overpass-turbo.eu">Overpass turbo link</a>
+		</Notes>
+	</Slide>
+
 	<Slide>
 		<h4>Beispiele</h4>
 	</Slide>
@@ -164,6 +215,9 @@
 		<Code>shop=books in Berlin</Code>
 
 		<Notes>
+			<h3>David</h3>
+			<b>Lass es die user einfach mal abtippen um sehen zu lassen</b> <br />
+			<i>Warnung wegen mobile</i>
 			<ol>
 				<li>
 					shop=books defeniert das man nach Objekten suchen will wo das tag shop gleich books ist.
@@ -182,6 +236,7 @@
 		<Code>cinema in tokio</Code>
 
 		<Notes>
+			<h3>Dimi</h3>
 			<ol>
 				<li>Es gibt einige presets die haben dann (mehrere) tags in einem wort kombiniert</li>
 				<li>Die englischen kann man im wizard nutzen</li>
@@ -193,6 +248,7 @@
 		<Code>amenity=parking and fee=no in "Köln"</Code>
 
 		<Notes>
+			<h3>David</h3>
 			<ol>
 				<li>amenity=parking: Parkplatz</li>
 				<li>fee=no: kostenlos</li>
@@ -209,17 +265,10 @@
 		<Code>amenity=fast_food and name!="McDonald's" and name!="Burger King"</Code>
 
 		<Notes>
-			Mit != für nicht gleiche sachen <br />
-			Es gibt auch regex support mit ~ und !~ das ist besser wenn man viele namen ausschließen will
-		</Notes>
-	</Slide>
-
-	<Slide>
-		<Code>amenity=fast_food and name!="McDonald's" and name!="Burger King"</Code>
-
-		<Notes>
+			<h3>Dimi</h3>
 			<ol>
-				<li>amenity=fast_food ist ein preset</li>
+				<li>!= ist nicht gleich</li>
+				<li>Es gibt kein {'< > <= >= '}</li>
 				<li>name!="McDonald's" und name!="Burger King" sind tags</li>
 			</ol>
 		</Notes>
@@ -230,7 +279,10 @@
 	<Slide>
 		<h3>Query</h3>
 
-		<Notes>Jetzt schauen wir uns die Query gleich an und machen sie leichter</Notes>
+		<Notes>
+			<h3>David</h3>
+			Jetzt schauen wir uns die Query gleich an und machen sie leichter
+		</Notes>
 	</Slide>
 	<Slide animate>
 		<Code lines id="code">
@@ -261,7 +313,7 @@
 	</Slide>
 
 	<Slide animate>
-		<Code lines id="code">
+		<Code lines="|10-12" id="code">
 			{`
                 [out:json][timeout:25];
                 {{geocodeArea:Berlin}}->.searchArea;
@@ -280,7 +332,19 @@
 
 		<Notes>
 			Man kann das ende moderniesieren <br />
-			man sollte immer ein out; am ende haben, fast immer out geom oder out center
+			man sollte immer ein out; am ende haben, fast immer out geom oder out center <br />
+			<table>
+				<tbody>
+					<tr>
+						<th>out geom</th>
+						<td>Gesamte objekte</td>
+					</tr>
+					<tr>
+						<th>out center</th>
+						<td>Nur das Zentrum von einem Objekt</td>
+					</tr>
+				</tbody>
+			</table>
 		</Notes>
 	</Slide>
 
@@ -301,9 +365,11 @@
 		</Code>
 
 		<Notes>
-			Indem man node way und relation durch nwr ersetzt ist es besser und man kann die union
-			entfernen. Für die Programmierer DRY. Wenn man jetzt z.b. statt nach shop=books nach
-			shop=supermarket suchen will muss man es nur einmal nicht drei mal ändern
+			<ul>
+				<li>Node, way und relation durch nwr ersetzen</li>
+				<li>Für programmierer: DRY (Don't repeat yourself)</li>
+				<li>Änderungen sind leichter <i>(man muss nur einmal statt dreimal etwas ändern)</i></li>
+			</ul>
 		</Notes>
 	</Slide>
 
@@ -336,6 +402,8 @@
 	</ul>
 
 	<Notes>
+		<h3>Dimi</h3>
+
 		<ul>
 			<li>Semikolons sind notwendig sonst gibt es einen Fehler</li>
 			<li>
@@ -359,6 +427,10 @@
 <Slide>
 	<Slide animate>
 		<h4>Sets und Unions</h4>
+
+		<Notes>
+			<h3>David</h3>
+		</Notes>
 	</Slide>
 	<Slide animate>
 		<h4>Sets und Unions</h4>
@@ -372,14 +444,20 @@
 		</Code>
 
 		<Notes>
-			hier würde erst nach nodes gesucht werden das ergebniss davon wird mit ways überschrieben und
-			das mit relations man hat also nur das ergebniss von relations <br />
+			<h3>David</h3>
 
-			In Overpass gibt es das konzept von sets, das sind quasi variabelen, sie starten immer mit
-			einem . und standard wird in ._ geschrieben. <br />
-			Hier wird dann jedesmal ._ überschrieben. <br />
+			<ol>
+				<li>Es wird nach nodes gesucht</li>
+				<li>Das ergebniss wird erst mit ways dann relations überschrieben</li>
+			</ol>
 
-			Um das zu lösen muss man die Union syntax nutzen
+			<ul>
+				<li>Es gibt sets</li>
+				<li>Sets starten mit .</li>
+				<li>Default set ist ._</li>
+				<li>._ wurde hier drei mal überschrieben</li>
+				<li>Unions nutzen um das zu vermeiden</li>
+			</ul>
 		</Notes>
 	</Slide>
 
@@ -397,8 +475,12 @@
 		</Code>
 
 		<Notes>
-			Hier gibt es jetzt durch die klammern eine union, jetzt wird das ergebnis der union in ._
-			geschrieben
+			<h3>David</h3>
+
+			<ul>
+				<li>Klammern: Unions</li>
+				<li>Problem gelöst</li>
+			</ul>
 		</Notes>
 	</Slide>
 
@@ -416,9 +498,18 @@
 		</Code>
 
 		<Notes>
+			<h3>David</h3>
+
 			Hier wird nun in das set .bookStores geschrieben. Das kann in größeren queries sehr sehr
-			hilfreich sein. <br />
+			hilfreich sein.<br />
 			Dadurch das man nochmals .bookStores direkt vor dem out schreibt wird dieses set ausgegeben
+
+			<ul>
+				<li>Pfeil sytax zum schreiben</li>
+				<li>Es wird in .bookStores geschrieben</li>
+				<li>Wir schreiben .bookStores direkt vor dem out um es auszugeben</li>
+				<li>Hier unnütz, doch in großen queries kann es hilfreich sein</li>
+			</ul>
 		</Notes>
 	</Slide>
 </Slide>
@@ -426,6 +517,10 @@
 <Slide>
 	<Slide animate>
 		<h2>Beispiele</h2>
+
+		<Notes>
+			<h3>Dimi</h3>
+		</Notes>
 	</Slide>
 
 	<Slide animate>
@@ -443,6 +538,21 @@
                 out;
             `}
 		</Code>
+
+		<Notes>
+			<h3>Dimi</h3>
+			<ul>
+				<li>
+					<b>DIMI</b>: Zeile 1 erklären
+				</li>
+				<li>
+					Wir suchen nach der area mit der id und schreiben es in die search area. Es handelt scih
+					um das camp gelände
+				</li>
+				<li>Dann suchen wir nach bäumen in der area durch area.searchArea</li>
+				<li>Out</li>
+			</ul>
+		</Notes>
 	</Slide>
 
 	<Slide>
@@ -457,6 +567,14 @@
                 out center;
             `}
 		</Code>
+
+		<Notes>
+			<ul>
+				<li>geocode area ist die nominatim suche (standard auf osm website)</li>
+				<li>cuisine ~ korean ist regex</li>
+				<li>dieser regex sucht für strings mit "korean" drin</li>
+			</ul>
+		</Notes>
 	</Slide>
 
 	<Slide animate>
@@ -479,11 +597,12 @@
 		</Code>
 
 		<Notes>
+			<h3>Dimi</h3>
 			<ul>
 				<li>
-					Diese query habe ich/dimi letztens in einem pull request for die osm website osmapp
-					genutzt. Sie findet alle bus/s-bahn/bahn... linien rund um einen bahnhof und gibt die
-					offiziele farbe der linie und die referenz aus.
+					Diese query habe ich letztens in einem pull request for die osm website osmapp genutzt.
+					Sie findet alle bus/s-bahn/bahn... linien rund um einen bahnhof und gibt die offiziele
+					farbe der linie und die referenz aus.
 				</li>
 				<li>
 					Zuerst out csv, damit bekommt man die daten im csv format, in dem fall erst mit dem tag
