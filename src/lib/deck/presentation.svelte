@@ -1,8 +1,10 @@
 <script lang="ts">
+	import Fragerunde from '$lib/presentation/Fragerunde.svelte';
 	import AppScreenshot from '$lib/presentation/appScreenshot.svelte';
 	import Code from './code.svelte';
 	import Notes from './notes.svelte';
 	import Slide from './slide.svelte';
+	import Slides from './slides.svelte';
 </script>
 
 <Slide>
@@ -31,6 +33,10 @@
 
 	<Notes>
 		<h3>David</h3>
+
+		<ul>
+			<li>Wie Wikipedia aber als Karte</li>
+		</ul>
 	</Notes>
 </Slide>
 
@@ -63,15 +69,20 @@
 	<Notes>
 		<h3>David</h3>
 
-		<li>
-			OSMApp ist Open Source und eigentlich keine app sondern eine pwa (Progressive Web Application)
-		</li>
-		<li><i>(Maps.me)</i> Organic Maps ist recht simpel hat aber auch nicht so viele funktionen</li>
-		<li>
-			OSMAnd ist sehr komplex doch hat auch sehr viele funktionen, es ist open source doch nur
-			eingeschränkt kostenlos außer im F-Droid store
-		</li>
-		<li>Komoot ist nicht open source</li>
+		<ul>
+			<li>Weil es open data ist kann jeder was damit machen</li>
+			<li>Selbst bei Jugendhackt gab es schon viele projekte die osm Daten nutzen</li>
+			<li>
+				OSMApp ist Open Source und eigentlich keine app sondern eine pwa (Progressive Web
+				Application)
+			</li>
+			<li>Organic Maps ist recht simpel hat aber auch nicht so viele funktionen</li>
+			<li>
+				OSMAnd ist sehr komplex doch hat auch sehr viele funktionen, es ist open source doch nur
+				eingeschränkt kostenlos außer im F-Droid store
+			</li>
+			<li>Komoot ist nicht open source</li>
+		</ul>
 	</Notes>
 </Slide>
 
@@ -127,12 +138,14 @@
 	</Slide>
 </Slide>
 
+<Fragerunde />
+
 <Slide>
 	<h4>Tags</h4>
 
 	<p>Tags sind Schlüssel-Wert-Paare</p>
 
-	<Code lines="1|1-4|5-6">
+	<Code lines="1|1-4|5-6|7">
 		{`
             highway=primary
             name=Hauptstraße
@@ -140,6 +153,7 @@
             lanes=4
             lanes:forward=3
             lanes:backward=1
+            surface=asphalt;concrete
         `}
 	</Code>
 
@@ -163,6 +177,7 @@
 	<div class="flex items-center justify-center h-96">
 		<img src="/overpassQR.gif" alt="QR-Code zu overpass" class="h-full aspect-square" />
 	</div>
+	<p>www.overpass-turbo.eu</p>
 
 	<Notes>
 		<h3>David</h3>
@@ -395,10 +410,14 @@
 	<ul>
 		<li>Semikolon: <b>notwendig</b>.</li>
 		<li>
-			<i>Abkürzungen</i>: <i>node</i>, <i>way</i>, <i>rel</i> oder <i>relation</i>.
+			<i>node</i>, <i>way</i>, <i>relation</i>
 		</li>
 		<li>Kombinationen: <i>nw</i>, <i>nwr</i>, <i>nr</i>, <i>wr</i>.</li>
 		<li>Tagsuche: <i>[shop=books][opening_hours]</i> für Buchhandlungen mit Öffnungszeiten.</li>
+		<li>
+			Mit runden Klammern kann man geographisch eingränzen und schauen ob etwas z.B. mitglied einer
+			relation ist
+		</li>
 	</ul>
 
 	<Notes>
@@ -499,11 +518,6 @@
 
 		<Notes>
 			<h3>David</h3>
-
-			Hier wird nun in das set .bookStores geschrieben. Das kann in größeren queries sehr sehr
-			hilfreich sein.<br />
-			Dadurch das man nochmals .bookStores direkt vor dem out schreibt wird dieses set ausgegeben
-
 			<ul>
 				<li>Pfeil sytax zum schreiben</li>
 				<li>Es wird in .bookStores geschrieben</li>
@@ -513,6 +527,8 @@
 		</Notes>
 	</Slide>
 </Slide>
+
+<Fragerunde />
 
 <Slide>
 	<Slide animate>
@@ -628,3 +644,5 @@
 		</Notes>
 	</Slide>
 </Slide>
+
+<Fragerunde />
