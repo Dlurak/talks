@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Overpass API und OSM</title>
+	<title>Dlool: Schulplaner für das digitale Zeitalter</title>
 </svelte:head>
 
 <Slides />

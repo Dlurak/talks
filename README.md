@@ -1,3 +1,7 @@
-# Openstreetmap und Overpass
+# Dlool: Schulplaner für das digitale Zeitalter
 
-Das ist die Präsentation für den Talk *Overpass und Openstreetmap*. Der Talk wurde auf dem CCCamp 2023 gehalten und nicht aufgezeichnet.
+Dlool, ein kollaborativer Open-Source Schulplaner, gestaltet die Organisation des Schullebens neu. Mit strukturierter Eintragung, plattformübergreifender Zugänglichkeit und einem kolloborativem Grundgedanken bietet Dlool eine moderne Alternative zu  proprietären Apps oder analogen Hausaufgabenheften.
+
+---
+
+Auf dem 37C3 habe ich einen Lightning Talk gehalten, in dem ich Dlool vorgestellt habe. Dies ist die Präsentation zu ihm.
