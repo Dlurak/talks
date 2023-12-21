@@ -27,6 +27,8 @@
 			// 16/9
 			width: 1244
 		});
+
+		// deck.configure({ showNotes: 'separate-page' });
 	});
 </script>
 

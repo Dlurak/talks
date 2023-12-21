@@ -11,7 +11,7 @@
 	<Notes>
 		<ul>
 			<li>Open source webapp Dlool vorstellen</li>
-			<li>Ca. seit einem halben Jahr entwickelt</li>
+			<li>Im Juni dieses Jahres begonnen</li>
 		</ul>
 
 		<p class="text-sm">
@@ -23,7 +23,7 @@
 
 <Slide>
 	<ul>
-		<li>Dlool ist ein kolloborativer Schulplaner</li>
+		<li>Kolloborativer Schulplaner</li>
 		<li>Normale Hausaufgaben</li>
 		<li>Kalendar für Klausuren</li>
 		<li><i>Private</i> und öffentliche Notitzen</li>
@@ -51,10 +51,10 @@
 
 <Slide>
 	<ul>
-		<li>Viele Schüler arbeiten digital, nutzen jedoch dennoch ein analoges Hausaufgabenheft</li>
-		<li>Nach einem Jahr ist es nutzlos</li>
-		<li>Wenn man es nicht dabei hat/verliert kann man nicht auf die Daten zugreifen</li>
-		<li>Es gibt kein vorgegebenes System ⇒ die Daten werden unstrukturiert</li>
+		<li>Schüler arbeiten digital, nutzen aber dennoch analoge Schulplaner</li>
+		<li>Nur ein Jahr nutzbar</li>
+		<li>Verlust führt zu Datenverlust</li>
+		<li>Kein vorgegebenes System ⇒ unstrukturierte Daten</li>
 	</ul>
 
 	<Notes>
