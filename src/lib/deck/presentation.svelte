@@ -89,7 +89,7 @@
 				<li>Kalender</li>
 			</ul>
 		</li>
-		<li>Dlool ist Open-Source, hat keine Tracker und legt einen Schwerpunkt auf Open-data</li>
+		<li>Dlool ist Open-Source, hat keine Tracker und hat eine freie API</li>
 		<li>Dlool ist kollaborativ</li>
 		<li>Viele kleine Details</li>
 	</ul>
