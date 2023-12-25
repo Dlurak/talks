@@ -156,9 +156,9 @@
 
 <Slide>
 	<div class="flex items-center justify-center">
-		<QRCode size={500} value="https://dlool.vercel.app" />
+		<QRCode size={500} value="https://www.dlool.me" />
 	</div>
-	<p class="font-mono">https://dlool.vercel.app</p>
+	<p class="font-mono">https://www.dlool.me</p>
 
 	<Notes>
 		Mit Dlool kann man zwar wissen was man machen muss, doch hausaufgaben löst Dlool leider nicht
