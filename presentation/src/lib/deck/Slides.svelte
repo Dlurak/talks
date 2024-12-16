@@ -4,12 +4,15 @@
 	import Markdown from 'reveal.js/plugin/markdown/markdown';
 	import Highlight from 'reveal.js/plugin/highlight/highlight';
 	import Notes from 'reveal.js/plugin/notes/notes';
+	import Zoom from 'reveal.js/plugin/zoom/zoom';
 
 	import 'reveal.js/dist/reveal.css';
 	import 'reveal.js/dist/theme/white.css';
-	import 'reveal.js/plugin/highlight/zenburn.css';
+	import './highlights.css';
+	// latte-hightlights.css is a light theme just in case of contrast issues
+	//import './latte-highlights.css';
 
-	import Presentation from './presentation.svelte';
+	import Presentation from './Presentation.svelte';
 
 	onMount(() => {
 		const deck = new Reveal({
@@ -21,10 +24,10 @@
 		});
 
 		deck.initialize({
-			plugins: [Markdown, Highlight, Notes],
+			plugins: [Markdown, Highlight, Notes, Zoom],
 
-			height: 700,
 			// 16/9
+			height: 700,
 			width: 1244
 		});
 	});

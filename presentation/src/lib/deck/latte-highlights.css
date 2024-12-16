@@ -1,0 +1,74 @@
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1rem !important;
+  border-radius: 0.375rem;
+  background: #1e1e2e; /* Base background for Catppuccin */
+  color: #cdd6f4; /* Text color for Catppuccin */
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-tag {
+  color: #f28fad; /* Pink for keywords and tags */
+}
+
+.hljs-template-tag {
+  color: #cdd6f4; /* Neutral text color */
+}
+
+.hljs-number {
+  color: #89b4fa; /* Blue for numbers */
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute {
+  color: #f5c2e7; /* Lavender for variables and attributes */
+}
+
+.hljs-literal {
+  color: #f9e2af; /* Yellow for literals */
+}
+
+.hljs-subst {
+  color: #9399b2; /* Subdued text for substitutions */
+}
+
+.hljs-title,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-section,
+.hljs-type {
+  color: #fab387; /* Peach for titles and identifiers */
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #cba6f7; /* Purple for symbols and links */
+}
+
+.hljs-deletion,
+.hljs-string,
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #a6e3a1; /* Green for strings and built-ins */
+}
+
+.hljs-addition,
+.hljs-comment,
+.hljs-quote,
+.hljs-meta {
+  color: #585b70; /* Muted gray for comments and meta */
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
