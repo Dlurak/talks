@@ -126,7 +126,7 @@ impl Into<Point> for Pair {
 let mut pair = Pair::new(42, 12);
 // funktioniert nur auf initialisierten Instanzen vom struct
 pair.swap();
-pair.into::<Point>();
+let point: Point = pair.into();
 ```
 
 ## Fehlerhandling
@@ -162,7 +162,3 @@ match option {
     None => println!("Keine Daten"),
 }
 ```
-
-# Quellen
-
-- [Structs (Rust by example)](https://doc.rust-lang.org/rust-by-example/custom_types/structs.html)

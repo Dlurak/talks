@@ -6,7 +6,7 @@ author: Dimi
 # Clap Cheatsheet
 
 ```rust
-use clap::Parser;
+use clap::{Parser, Subcommand};
 
 #[derive(Parser, Debug)]
 pub struct Cli {
@@ -30,6 +30,7 @@ struct InfoArgs {
 }
 
 fn main() {
-    Cli::parse();
+    let args = Cli::parse();
+    println!("{:?}", args);
 }
 ```

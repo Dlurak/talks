@@ -1,4 +1,10 @@
 #[derive(Debug, PartialEq, Eq)]
+enum BookError {
+    AlreadyCheckedOut,
+    NotCheckedOut,
+}
+
+#[derive(Debug, PartialEq, Eq)]
 struct Book {
     title: String,
     author: String,
@@ -15,18 +21,18 @@ impl Book {
         }
     }
 
-    fn check_out(&mut self) -> Result<(), ()> {
+    fn check_out(&mut self) -> Result<(), BookError> {
         if self.is_checked_out {
-            Err(())
+            Err(BookError::AlreadyCheckedOut)
         } else {
             self.is_checked_out = true;
             Ok(())
         }
     }
 
-    fn return_book(&mut self) -> Result<(), ()> {
+    fn return_book(&mut self) -> Result<(), BookError> {
         if !self.is_checked_out {
-            Err(())
+            Err(BookError::NotCheckedOut)
         } else {
             self.is_checked_out = false;
             Ok(())
@@ -46,19 +52,13 @@ impl Summary for Book {
             "Available"
         };
 
-        format!(
-            "{} by {} - {}",
-            self.title,
-            self.author,
-            checked_out
-        )
+        format!("{} by {} - {}", self.title, self.author, checked_out)
     }
 }
 
 fn main() {
-    println!(Book::new("Rust", "Steve").summarize());
+    println!("{}", Book::new("Rust", "Steve").summarize());
 }
-
 
 #[cfg(test)]
 mod tests {
@@ -66,35 +66,19 @@ mod tests {
     #[test]
     fn test_book() {
         let mut book = Book::new("Rust", "Steve");
-        assert_eq!(Book {
-            title: String::from("Rust"),
-            author: String::from("Steve"),
-            is_checked_out: false,
-        }, book);
         assert_eq!(
-            book.summarize(),
-            "Rust by Steve - Available"
+            Book {
+                title: String::from("Rust"),
+                author: String::from("Steve"),
+                is_checked_out: false,
+            },
+            book
         );
-        assert_eq!(
-            book.check_out(),
-            Ok(())
-        );
-        assert_eq!(
-            book.check_out(),
-            Err(())
-        );
-        assert_eq!(
-            book.summarize(),
-            "Rust by Steve - Checked out"
-        );
-        assert_eq!(
-            book.return_book(),
-            Ok(())
-        );
-        assert_eq!(
-            book.return_book(),
-            Err(())
-        );
+        assert_eq!(book.summarize(), "Rust by Steve - Available");
+        assert_eq!(book.check_out(), Ok(()));
+        assert_eq!(book.check_out(), Err(BookError::AlreadyCheckedOut));
+        assert_eq!(book.summarize(), "Rust by Steve - Checked out");
+        assert_eq!(book.return_book(), Ok(()));
+        assert_eq!(book.return_book(), Err(BookError::NotCheckedOut));
     }
-    
 }

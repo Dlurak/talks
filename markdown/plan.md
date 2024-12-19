@@ -39,8 +39,8 @@ title: 38C3 - Workshopplan
     - cargo add
     - features von crates (cargo add -F)
     - cargo build (--release)
+
+## Nicht drin:
+
 - Vec
 - Strings
-- Clap
-    - Basic
-    - Subcommands

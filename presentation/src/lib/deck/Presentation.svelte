@@ -51,17 +51,21 @@
 		<Code>
 			{samples.helloWorldMut}
 		</Code>
+		<Code lines={false}>{samples.init}</Code>
 		<b>Eigene Übung (ﾉ◕ヮ◕)ﾉ</b>
 		<Notes>
+			Cargo schauen wir uns später nochmal genauer an <br>
 			Namen und Alter ändern auf deinen <br/>
 			<b>Für Expternten</b>: Erst namen und alter ausprinten und dann die vars verändern um das
 			alter um eins zu erhöhen
 		</Notes>
 	</Slide>
-	<Slide>
-		<Code lines={false}>{samples.init}</Code>
-		<Notes>Cargo schauen wir uns später nochmal genauer an</Notes>
-	</Slide>
+</Slide>
+
+<Slide>
+	<h2>Funktionen</h2>
+
+	<Code>{samples.func}</Code>
 </Slide>
 
 <Slide>
@@ -83,17 +87,25 @@
 		</Code>
 
 		<Notes>
+			<h3>Expressions</h3>
+			<ul>
+				<li>Expressions sind Ausdrücke, die zu irgendeinem wert evaluiert werden</li>
+				<li>blocks sind eine expression</li>
+				<li>if sind expressions</li>
+			</ul>
+			<hr />
 			<ul>
 				<li>Vergleichbar mit dem tenary operator</li>
 				<li>Semikolon</li>
 			</ul>
 
 			<h3>Übung</h3>
-			<i>Falls es probleme gibt</i>
+			<i>Falls es Probleme gibt, sonst nicht</i>
 			<ul>
 				<li>Setzt eine variabele temperature</li>
 				<li>Je nach temperatur setzt ihr eine andere variabele auf Heiß, Kalt, oder Frostig</li>
-				<li>Diese Variabele ausprinten</li>
+				<li>Diese Variabele zurückgeben</li>
+				<li>Diese Funktion ausprinten</li>
 			</ul>
 		</Notes>
 	</Slide>
@@ -224,6 +236,25 @@
 				<li>hier installiert man clap mit dem feature "derive"</li>
 			</ul>
 		</Notes>
+	</Slide>
+</Slide>
+
+<Slide>
+	<Slide animate>
+		<h2>Clap</h2>
+		<Notes>
+			<ul>
+				<li>Library um command line arguments zu parsen z.b. `my-cli -n 5 -tgH --fav 5 --fav 6 "Hallo"`</li>
+				<li>Macht auch help messages</li>
+			</ul>
+		</Notes>
+	</Slide>
+	<Slide animate>
+		<h2>Clap</h2>
+		<Code>{samples.clap.basic}</Code>
+	</Slide>
+	<Slide animate>
+		<Code>{samples.clap.subcommands}</Code>
 	</Slide>
 </Slide>
 

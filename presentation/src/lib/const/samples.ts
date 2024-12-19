@@ -18,6 +18,15 @@ $ cargo init
 $ cargo run
 `
 
+const func = `
+fn add(a: i32, b: i32) -> (i32, i32) {
+	(a + b, b)
+}
+
+let (sum, b) = add(2, 5);
+//   7    5
+`;
+
 const ifs = `
 if age >= 18 {
 	println!("Du bist volljährig")
@@ -111,10 +120,53 @@ impl Person {
 }
 `
 
+const basic = `
+use clap::Parser;
+
+#[derive(Parser)]
+struct Cli {
+	#[arg(short, long, default_value_t = true)]
+	verify: bool,
+
+	#[arg(short, long, default_value_t = false)]
+	verbose: bool,
+}
+
+fn main() {
+	let args = Cli::parse();
+}
+`
+
+const subcommands = `
+use clap::{Parser, Subcommand};
+
+#[derive(Subcommand)]
+enum Commands {
+	Init,
+	#[command(alias = "information")]
+	Info { complete: Option<bool> }
+}
+
+#[derive(Parser)]
+struct Cli {
+	#[command(subcommands)]
+	cmd: Commands,
+	#[arg(short, long, default_value_t = false)]
+	verbose: bool,
+}
+
+fn main() {
+	let args = Cli::parse();
+}
+`
+
+const clap = { basic, subcommands }
+
 export const samples = {
 	helloWorld,
 	helloWorldMut,
 	init,
+	func,
 	ifs,
 	ifAssignments,
 	enums,
@@ -124,5 +176,6 @@ export const samples = {
 	match,
 	matchRes,
 	struct,
-	structDeriveImpl
+	structDeriveImpl,
+	clap,
 };
