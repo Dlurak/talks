@@ -5,8 +5,6 @@ author: Dimi
 
 # Rust Cheatsheet
 
-## Basics
-
 | Keyword   | Beschreibung                                                               |
 | --------- | -------------------------------------------------------------------------- |
 | `fn`      | Funktion                                                                   |
@@ -155,7 +153,7 @@ fn error() -> Result<i32, String> {
 Rust hat **kein** klassisches `null` wie JavaScript oder C
 Es gibt das `enum Option`:
 
-```rust
+```2rust
 let option: Option<i32> = Some(42);
 match option {
     Some(value) => println!("Daten sind da: {}", value),

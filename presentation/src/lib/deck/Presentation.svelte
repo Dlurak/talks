@@ -34,8 +34,7 @@
 		<Code lines="2">{samples.helloWorld}</Code>
 		<ul>
 			<li><i>let</i> für Variabelen</li>
-			<li>Unveränderbar außer man erlaubt veränderungen</li>
-			<li>Der type wird meistens erkannt</li>
+			<li>Der Type wird meistens erkannt, selten muss man ihn angeben</li>
 		</ul>
 	</Slide>
 	<Slide animate>
@@ -56,8 +55,7 @@
 		<Notes>
 			Cargo schauen wir uns später nochmal genauer an <br>
 			Namen und Alter ändern auf deinen <br/>
-			<b>Für Expternten</b>: Erst namen und alter ausprinten und dann die vars verändern um das
-			alter um eins zu erhöhen
+			<b>Für Expternten</b>: Erst Namen und Alter ausprinten und dann die Variablen verändern um das Alter um eins zu erhöhen
 		</Notes>
 	</Slide>
 </Slide>
@@ -154,6 +152,8 @@
 			<ul>
 				<li>Null-safety</li>
 				<li>Man kann nur auf Datenzugreifen wenn man sichergestellt hat, dass diese existieren</li>
+				<li>Also mit pattern matching ausliest</li>
+				<li>Oder mit bestimmten spezifischen Methoden weiterverarbeitet</li>
 			</ul>
 			<h4>Für Haskell-Menschis</h4>
 			Das sind monads

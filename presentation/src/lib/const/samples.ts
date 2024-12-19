@@ -29,9 +29,9 @@ let (sum, b) = add(2, 5);
 
 const ifs = `
 if age >= 18 {
-	println!("Du bist volljährig")
+	println!("Du bist volljährig");
 } else {
-	println!("Du bist nicht volljährig")
+	println!("Du bist nicht volljährig");
 }
 `
 
