@@ -120,6 +120,21 @@ impl Person {
 }
 `
 
+const borrow = `
+fn main() {
+    let s1 = String::from("hello");
+    let len = calculate_length(&s1);
+    let len_2 = calculate_length(&s1);
+
+	dbg!(len);
+	dbg!(len_2);
+}
+
+fn calculate_length(s: &String) -> usize {
+    s.len()
+}
+`
+
 const basic = `
 use clap::Parser;
 
@@ -178,4 +193,5 @@ export const samples = {
 	struct,
 	structDeriveImpl,
 	clap,
+borrow
 };

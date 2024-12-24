@@ -240,6 +240,32 @@
 </Slide>
 
 <Slide>
+	<Slide>
+		<h2>Borrow Checker</h2>
+	</Slide>
+	<Slide>
+		<h2>Ownership</h2>
+		<ul>
+			<li>In Rust hat jeder Wert <b>genau einen</b> Owner</li>
+			<li>Wenn der Owner out of scope geht dann wird er gelöscht</li>
+		</ul>
+		<Notes>
+			<ul>
+				<li>Memory management</li>
+				<li>Verhindert use after frees</li>
+			</ul>
+		</Notes>
+	</Slide>
+	<Slide>
+		<h2>Borrowing</h2>
+		<ul>
+			<li>Man kann beliebig viele Referenzen zu jedem Wert haben</li>
+			<Code>{samples.borrow}</Code>
+		</ul>
+	</Slide>
+</Slide>
+
+<Slide>
 	<Slide animate>
 		<h2>Clap</h2>
 		<Notes>
