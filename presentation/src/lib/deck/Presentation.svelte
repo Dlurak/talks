@@ -7,6 +7,9 @@
 
 <Slide>
 	<h1>Einen CLI mit Rust erstellen</h1>
+	<div class="flex justify-center">
+		<img src="/rust.png" alt="rust zeichnung">
+	</div>
 </Slide>
 
 <Slide>
@@ -147,6 +150,7 @@
 				<li>Fehler management</li>
 				<li>Unterschied zwischen try/catch und Result</li>
 				<li>Beispielhaft erklären</li>
+				<li>Ein leeres tuple ist basically nichts, wir haben keinen logischen rückgabewert brauchen aber einen return wert für den Ok wert</li>
 			</ul>
 			<h3>Option</h3>
 			<ul>
@@ -216,6 +220,27 @@
 	</Slide>
 </Slide>
 
+<Slide animate>
+	<Slide>
+		<h2>Traits</h2>
+		<Code>
+			{samples.traits}
+		</Code>
+		<Notes>
+			<ul>
+				<li>Bischen wie interfaces in anderen Klassen</li>
+				<li>Ermöglichen zusammen mit enums polymorphism</li>
+			</ul>
+		</Notes>
+	</Slide>
+	<Slide>
+		<ul>
+			<li>Eigenes trait auf beliebigen type</li>
+			<li>Fremdes trait auf eigenen type</li>
+		</ul>
+	</Slide>
+</Slide>
+
 <Slide>
 	<Slide animate>
 		<h2>Cargo</h2>
@@ -233,6 +258,7 @@
 			<ul>
 				<li>Rust libs nennt man crate</li>
 				<li>crates können optionale features haben</li>
+				<li>das reduziert compile zeiten</li>
 				<li>hier installiert man clap mit dem feature "derive"</li>
 			</ul>
 		</Notes>
@@ -262,6 +288,11 @@
 			<li>Man kann beliebig viele Referenzen zu jedem Wert haben</li>
 			<Code>{samples.borrow}</Code>
 		</ul>
+		<Notes>
+			<ul>
+				<li><b>ODER</b> eine mutable reference zu einem Objekt</li>
+			</ul>
+		</Notes>
 	</Slide>
 </Slide>
 

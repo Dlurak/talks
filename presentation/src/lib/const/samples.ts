@@ -63,6 +63,7 @@ enum Color {
 const optionResult = `
 fn http_status() -> Result<u16, MyError> {}
 fn shortend(str: &str) -> Option<char> {}
+fn move_robot(len: i32) -> Result<(), RobotMoveError>
 `
 
 const optionResultDef = `
@@ -135,6 +136,18 @@ fn calculate_length(s: &String) -> usize {
 }
 `
 
+const traits = `
+trait Summarize {
+	fn summarize(&self) -> String;
+}
+
+impl Summarize for Book {
+	fn summarize(&self) -> String {
+		String::from("hallo")
+	}
+}
+`
+
 const basic = `
 use clap::Parser;
 
@@ -193,5 +206,6 @@ export const samples = {
 	struct,
 	structDeriveImpl,
 	clap,
-borrow
+	borrow,
+	traits
 };

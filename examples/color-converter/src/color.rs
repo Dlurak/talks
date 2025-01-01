@@ -1,3 +1,5 @@
+// grundsätzlich nicht so wichtig aber könnt ihr lesen wenn ihr wollt :)
+
 use regex::Regex;
 use std::fmt;
 
@@ -21,6 +23,7 @@ pub enum AnsiColor {
     White,
 }
 
+// Bei einem makro wird der makro aufruf mit bestimmten anderen code ersetzt
 macro_rules! impl_from_ansi {
     ($type:ty) => {
         impl From<AnsiColor> for $type {
@@ -40,6 +43,7 @@ macro_rules! impl_from_ansi {
     };
 }
 
+// man kann hierdurch AnsiColor in alle möglichen zahlen konvertieren
 impl_from_ansi!(u8);
 impl_from_ansi!(u16);
 impl_from_ansi!(u32);
@@ -56,6 +60,7 @@ impl_from_ansi!(f32);
 impl_from_ansi!(f64);
 
 impl Color {
+    /// Converts the color to an rgb value
     pub fn to_rgb(&self) -> (u8, u8, u8) {
         match self {
             Color::RGB(r, g, b) => (*r, *g, *b),
@@ -91,6 +96,8 @@ impl Color {
         }
     }
 
+    /// returns the best foreground color for a given bg
+    /// either white or black
     pub fn foreground(&self) -> AnsiColor {
         let (r, g, b) = self.to_rgb();
         let brightness = r as u32 * 299 + g as u32 * 587 + b as u32 * 114;
@@ -102,6 +109,7 @@ impl Color {
     }
 }
 
+// Probiert eine `Color` von einem String zu parsen
 impl TryFrom<&str> for Color {
     type Error = String;
 
@@ -141,6 +149,7 @@ impl TryFrom<&str> for Color {
     }
 }
 
+/// implementiert die schöne darstellung für eine `Color`
 impl fmt::Display for Color {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
@@ -150,6 +159,7 @@ impl fmt::Display for Color {
     }
 }
 
+// Hilfsfunktion zum color parsing
 fn parse_color_variant<V, C, R>(
     str: &str,
     pattern: Regex,
@@ -187,6 +197,7 @@ where
 mod tests {
     use super::*;
 
+    // unit test um das parsen zu testen
     #[test]
     fn test_tryfrom() {
         assert_eq!(Ok(Color::RGB(0, 0, 0)), Color::try_from("rgb 0 0  0"));

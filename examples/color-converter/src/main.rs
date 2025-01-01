@@ -25,11 +25,15 @@ fn main() {
     let args = Args::parse();
     let (r, g, b) = args.color.to_rgb();
 
+
+    // dieser komische String setzt im terminal eine hintergrundfarbe
+    // geht auch mit `ansi_term`
     println!(
         "\x1b[48;2;{};{};{}m\x1b[38;5;{}m{}\x1b[0m",
         r,
         g,
         b,
+        // u8::from() konvertiert das .foreground() zu einem u8
         u8::from(args.color.foreground()),
         args.color
     );
