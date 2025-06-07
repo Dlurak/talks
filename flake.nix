@@ -11,12 +11,7 @@
     let
       forAllSystems =
         function:
-        nixpkgs.lib.genAttrs [
-          "aarch64-darwin"
-          "aarch64-linux"
-          "x86_64-darwin"
-          "x86_64-linux"
-        ] (
+        nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed (
           system: function nixpkgs.legacyPackages.${system}
         );
     in
@@ -26,6 +21,7 @@
           buildInputs = with pkgs; [
 			marp-cli
 			(writeShellScriptBin "rebuild" "${watchexec}/bin/watchexec -r -e md -- ${marp-cli}/bin/marp presi.md --pdf")
+			(writeShellScriptBin "thing" "${pkgs.polkit_gnome}/libexec/polkit-agent-1")
           ];
         };
       });

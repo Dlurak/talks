@@ -105,35 +105,7 @@ pkgs.mkShell {
 
 ```nix
 {
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-  };
-
-  outputs = {
-    self,
-    nixpkgs,
-  }: let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-  in {
-    devShell.${system}.default = pkgs.mkShell {
-      buildInputs = with pkgs; [
-        cargo
-        rustc
-        rustfmt
-        pre-commit
-        rustPackages.clippy
-        bacon
-      ];
-      RUST_SRC_PATH = pkgs.rustPlatform.rustLibSrc;
-    };
-  }
-}
-```
-
----
-
-```nix
+  `nix
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -158,49 +130,6 @@ pkgs.mkShell {
       RUST_SRC_PATH = pkgs.rustPlatform.rustLibSrc;
     };
   }
-}
-```
-
----
-
-```nix
-{
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-  };
-
-  outputs =
-    {
-      self,
-      nixpkgs,
-    }:
-    let
-      forAllSystems =
-        function:
-        nixpkgs.lib.genAttrs [
-          "aarch64-darwin"
-          "aarch64-linux"
-          "x86_64-darwin"
-          "x86_64-linux"
-        ] (
-          system: function nixpkgs.legacyPackages.${system}
-        );
-    in
-    {
-      devShells = forAllSystems (pkgs: {
-        default = pkgs.mkShell {
-          buildInputs = with pkgs; [
-            cargo
-            rustc
-            rustfmt
-            rustPackages.clippy
-            bacon
-            rust-analyzer
-          ];
-          RUST_SRC_PATH = pkgs.rustPlatform.rustLibSrc;
-        };
-      });
-    };
 }
 ```
 
